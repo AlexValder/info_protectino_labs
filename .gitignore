@@ -3,3 +3,5 @@ lab01
 *.docx
 venv
 .idea
+.~lock.*
+*.odt
