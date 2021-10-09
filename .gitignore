@@ -1,0 +1,5 @@
+lab01
+*.pdf
+*.docx
+venv
+.idea
