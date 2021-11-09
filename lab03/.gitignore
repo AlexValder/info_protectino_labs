@@ -1,0 +1,8 @@
+gost/GOST/.vs
+gost/GOST/Debug
+gost/GOST/Release
+gost/GOST/x64
+py/.mypy_cache
+py/__pycache__
+*.odt
+*.tmp
