@@ -1,0 +1,7 @@
+py_lab/.mypy_cache
+py_lab/__pycache__
+py_lab/custom_rsa/__pycache__
+*.zip
+*.odt
+*.tmp
+*.key
