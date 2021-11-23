@@ -8,19 +8,19 @@ class RsaValidator:
         self._signingKey = None
 
 
-    def setValidatingKey(self, publicKeyFilePath: str):
+    def setValidatingKey(self, publicKeyFilePath: str) -> None:
         with open(publicKeyFilePath, 'r', encoding='utf8') as publicKey:
             rawKey = publicKey.readlines()
             self._validatingKey = (int(rawKey[0]), int(rawKey[1]))
 
 
-    def setSigningKey(self, privateKeyFilePath: str):
+    def setSigningKey(self, privateKeyFilePath: str) -> None:
         with open(privateKeyFilePath, 'r', encoding='utf8') as privateKey:
             rawKey = privateKey.readlines()
             self._signingKey = (int(rawKey[0]), int(rawKey[1]))
 
 
-    def signFile(self, fileToSignPath: str):
+    def signFile(self, fileToSignPath: str) -> None:
         if self._signingKey is None:
             raise RuntimeError('Signing (private) key is not set.')
         
@@ -35,7 +35,7 @@ class RsaValidator:
             signedFile.write(fileBytes)
 
 
-    def validateFile(self, fileToValidatePath: str):
+    def validateFile(self, fileToValidatePath: str) -> bool:
         if self._validatingKey is None:
             raise RuntimeError('Validating (public) key is not set.')
         

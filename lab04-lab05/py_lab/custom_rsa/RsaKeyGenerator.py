@@ -1,4 +1,5 @@
 from .RandomPrimeNumberGenerator import RandomPrimeNumbersGenerator as rpng
+from typing import Tuple
 
 
 class RsaKeyGenerator:
@@ -10,7 +11,7 @@ class RsaKeyGenerator:
         self.openedExponent = 65537 # Fifth Fermat's number
 
 
-    def _extendedEuklidAlgorithm(self, modulo):
+    def _extendedEuklidAlgorithm(self, modulo) -> int:
         eCopy = self.openedExponent
         x0 = 1; x1 = 0
         moduloCopy = modulo
@@ -26,7 +27,7 @@ class RsaKeyGenerator:
             eCopy, moduloCopy = moduloCopy, eCopy
 
 
-    def getPrivateAndPublickKey(self):
+    def getPrivateAndPublickKey(self) -> Tuple[Tuple[int, int], Tuple[int, int]]:
         random1 = rpng.getRandomNumber(1024)
         random2 = rpng.getRandomNumber(1024)
         mul = random1 * random2

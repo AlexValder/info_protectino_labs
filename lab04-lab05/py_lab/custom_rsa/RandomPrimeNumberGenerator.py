@@ -5,7 +5,7 @@ class RandomPrimeNumbersGenerator:
     '''This class helps you to generate big prime numbers.'''
 
     @staticmethod
-    def _isPrime(number: int, testCount:int = 128):
+    def _isPrime(number: int, testCount:int = 128) -> bool:
         #This method is taken from here: https://medium.com/@prudywsh/how-to-generate-big-prime-numbers-miller-rabin-49e6e6af32fb
         if number == 2 or number == 3:
             return True

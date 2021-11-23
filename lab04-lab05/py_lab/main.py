@@ -146,7 +146,7 @@ def onSignButtonPressed():
 
 def onValidateButtonPressed():
     try:        
-        filePath = filedialog.askopenfilename(titile="Choose for signature validation")        
+        filePath = filedialog.askopenfilename(title="Choose for signature validation")        
         if not filePath:
             return        
         message = 'Validation status: [{}]'.format('Success' if rsaValidator.validateFile(filePath) else 'Failure')
